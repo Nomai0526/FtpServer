@@ -21,7 +21,7 @@ public class Parser extends Thread {
     //24234
 
     private Socket controlSocket;
-    private PrintWriter controlOutWriter;
+    private static PrintWriter controlOutWriter;
     private BufferedReader controlIn;
 
     private int dataPort;
@@ -71,7 +71,7 @@ public class Parser extends Thread {
     }
 
     //向客户端打印信息的方法
-    private void sendMsgToClient(String msg) {
+    public static void sendMsgToClient(String msg) {
         controlOutWriter.println(msg);
     }
 
